@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
+using System.Threading.Tasks;
 
 //Using static
 using static CSharp6.CSharp6;
@@ -69,9 +71,24 @@ namespace CSharp6
 
                 //String interpolation
                 Console.WriteLine($"FullName: {FirstName} + {LastName}");
-                
+
             }
         }
-        
+
+        public static Dictionary<int, string> messages = new Dictionary<int, string>
+        {
+            { 404, "Page not Found"},
+            { 302, "Page moved, but left a forwarding address."},
+            { 500, "The web server can't come out to play today."}
+        };
+
+        public static Dictionary<int, string> weCodes = new Dictionary<int, string>
+        {
+            [200] = "OK",
+            [404] = "Page not Found",
+            [302] = "Page moved, but left a forwarding address.",
+            [500] = "The web server can't come out to play today."
+        };
     }
+
 }
