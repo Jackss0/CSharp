@@ -22,6 +22,11 @@ namespace CSharp6
 
             //nameof expression
             Console.WriteLine(nameof(FirstName));
+
+            foreach (var course in Courses)
+            {
+                Console.WriteLine("course: " + course);
+            }
         }
     }
 
@@ -39,7 +44,11 @@ namespace CSharp6
         }
 
         //Auto-property initializers
-        public static ICollection<string> Courses = new List<string>();
+        public static ICollection<string> Courses = new List<string>
+        {
+            "Math",
+            "Physic"
+        };
 
         //Props with body expression
         public static string FullName => $"{FirstName} {LastName}";
